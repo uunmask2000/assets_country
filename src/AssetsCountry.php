@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-09-30 08:21:59
- * @LastEditTime: 2021-09-30 09:31:23
+ * @LastEditTime: 2021-09-30 10:15:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \aa\api\AssetsCountry.php
@@ -47,6 +47,28 @@ class AssetsCountry
                     return $this->img_path . strtoupper($value['code']) . '.png';
                 }
             }
+            // //code...
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+
+    /**
+     * 獲取所有國家(地區)國碼國旗
+     *
+     * @return array $lists
+     */
+    public function getAllAssetsCountryFlag()
+    {
+        try {
+            $json  = file_get_contents(__DIR__ . '/json/lists.json');
+            $lists = json_decode($json, 1);
+
+            foreach ($lists as $key => $value) {
+                $lists[$key]['flag'] = $this->img_path . strtoupper($value['code']) . '.png';
+            }
+
+            return $lists;
             // //code...
         } catch (\Throwable $th) {
             throw $th;
