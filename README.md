@@ -32,3 +32,12 @@ input
 output
     https://raw.githubusercontent.com/uunmask2000/assets_country/main/src/img/TW.png
 ```
+
+### 獲取所有國家(地區)國碼國旗 getAllAssetsCountryFlag
+
+```
+input
+
+output
+    []
+```
