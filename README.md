@@ -4,6 +4,17 @@
 
 [composer](https://packagist.org/packages/uunmask2000_kk/assets_country)
 
+### initialize
+
+```
+
+require 'vendor/autoload.php'; 
+use uunmask2000_kk\AssetsCountry\AssetsCountry;
+$AssetsCountry = new AssetsCountry();
+
+```
+
+
 ### 獲取根據國家(地區)縮碼國旗 getAssetsCountryFlagByCountryCode
 
 ```
