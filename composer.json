@@ -1,5 +1,5 @@
 {
-    "name": "uunmask2000_kk/assets_country", 
+    "name": "uunmask2000_kk/assets_country",
     "authors": [
         {
             "name": "uunmask2000_kk",
@@ -8,7 +8,7 @@
             "role": "Developer"
         }
     ],
-    "description": "這是一個根據 國家縮碼(2個) ，返回對應的國旗flag (png)",
+    "description": "根據一些國家(地區)資訊，返回對應的國家(地區)縮碼國旗 ",
     "type": "library",
     "license": "LGPL-3.0",
     "minimum-stability": "stable",
