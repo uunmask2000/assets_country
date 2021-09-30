@@ -1,0 +1,46 @@
+{
+    "name": "uunmask2000_kk/assets_country", 
+    "authors": [
+        {
+            "name": "uunmask2000_kk",
+            "email": "uunmask2000@gmail.com",
+            "homepage": "https://twitter.com/uunmask2000",
+            "role": "Developer"
+        }
+    ],
+    "description": "這是一個根據 國家縮碼(2個) ，返回對應的國旗flag (png)",
+    "type": "library",
+    "license": "LGPL-3.0",
+    "minimum-stability": "stable",
+    "support": {
+        "issues": "https://github.com/uunmask2000/assets_country/issues"
+    },
+    "require": {
+        "php": ">=7.1",
+        "ext-xml": "*",
+        "ext-simplexml": "*"
+    },
+    "require-dev": {
+        "ext-dom": "*",
+        "ext-zip": "*",
+        "phpunit/phpunit": "^9 || ^8 || ^7"
+    },
+    "suggest": {
+        "ext-zip": "Needed to store or download multiple files at once."
+    },
+    "config": {
+        "platform": {
+            "php": "7.0.0"
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "extra": {
+        "branch-alias": {}
+    }
+}
