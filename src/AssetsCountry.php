@@ -2,7 +2,7 @@
 /*
  * @Arthur: kk
  * @Date: 2022-01-10 17:57:59
- * @LastEditTime: 2022-01-11 09:47:18
+ * @LastEditTime: 2022-01-11 10:01:41
  * @LastEditors: your name
  * @Description: 自動生成 [嚴格紀律 Description]
  * @FilePath: \assets_country\src\AssetsCountry.php
@@ -103,6 +103,16 @@ class AssetsCountry
             $id = 0;
             if ($Column == 'code') {
                 $key =                strtoupper($key);
+                switch ($key) {
+                    case 'UK':
+                        $key = 'GB';
+                        $Column = 'code';
+                        break;
+
+                    default:
+                        # code...
+                        break;
+                }
             } else if ($Column == 'dial_code') {
                 $key =             (int)($key);
                 switch ($key) {
