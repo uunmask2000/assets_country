@@ -11,7 +11,7 @@
     "description": "根據一些國家(地區)資訊，返回對應的國家(地區)縮碼國旗 ",
     "type": "library",
     "license": "LGPL-3.0",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "support": {
         "issues": "https://github.com/uunmask2000/assets_country/issues"
     },
