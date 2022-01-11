@@ -107,7 +107,7 @@ class AssetsCountry
                 $key =             (int)($key);
                 switch ($key) {
                     case '44':
-                        $key = 'UK';
+                        $key = 'GB';
                         $Column = 'code';
                         break;
 
