@@ -2,7 +2,7 @@
 /*
  * @Arthur: kk
  * @Date: 2022-01-10 17:57:59
- * @LastEditTime: 2022-01-11 08:52:06
+ * @LastEditTime: 2022-01-11 09:47:18
  * @LastEditors: your name
  * @Description: 自動生成 [嚴格紀律 Description]
  * @FilePath: \assets_country\src\AssetsCountry.php
@@ -45,12 +45,19 @@ class AssetsCountry
         try {
             $json  = file_get_contents(__DIR__ . '/json/lists.json');
             $lists = json_decode($json, 1);
-
-            foreach ($lists as $key => $value) {
-                if ($value['dial_code'] === $code) {
-                    return $this->img_path . strtoupper($value['code']) . '.png';
-                }
+            # 同地區判斷
+            switch ($code) {
+                case '44':
+                    return $this->img_path . strtoupper('UK') . '.png';
+                default:
+                    foreach ($lists as $key => $value) {
+                        if ($value['dial_code'] === $code) {
+                            return $this->img_path . strtoupper($value['code']) . '.png';
+                        }
+                    }
             }
+
+
             // //code...
         } catch (\Throwable $th) {
             throw $th;
@@ -79,6 +86,14 @@ class AssetsCountry
         }
     }
 
+    /**
+     * getCountryFlagByColumn
+     *
+     * @param string $key
+     * @param string $Column
+     * 
+     * @return mixed
+     */
     public function getCountryFlagByColumn($key = 'tw', $Column = 'code')
     {
         try {
@@ -88,8 +103,18 @@ class AssetsCountry
             $id = 0;
             if ($Column == 'code') {
                 $key =                strtoupper($key);
-            } else if ($Column == 'code') {
+            } else if ($Column == 'dial_code') {
                 $key =             (int)($key);
+                switch ($key) {
+                    case '44':
+                        $key = 'UK';
+                        $Column = 'code';
+                        break;
+
+                    default:
+                        # code...
+                        break;
+                }
             }
 
             try {
@@ -104,7 +129,7 @@ class AssetsCountry
             $output = $lists[$id];
             $output['flag'] =  $this->img_path . strtoupper($output['code']) . '.png';
 
-            return $output ;
+            return $output;
             // //code...
         } catch (\Throwable $th) {
             throw $th;

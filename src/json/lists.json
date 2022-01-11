@@ -1150,6 +1150,11 @@
         "code": "GB"
     },
     {
+        "name": "United Kingdom",
+        "dial_code": "44",
+        "code": "UK"
+    },
+    {
         "name": "United States",
         "dial_code": "1",
         "code": "US"
