@@ -2,7 +2,7 @@
 /*
  * @Arthur: kk
  * @Date: 2022-01-10 17:57:59
- * @LastEditTime: 2022-01-11 09:39:17
+ * @LastEditTime: 2022-01-11 09:47:18
  * @LastEditors: your name
  * @Description: 自動生成 [嚴格紀律 Description]
  * @FilePath: \assets_country\src\AssetsCountry.php
@@ -86,6 +86,14 @@ class AssetsCountry
         }
     }
 
+    /**
+     * getCountryFlagByColumn
+     *
+     * @param string $key
+     * @param string $Column
+     * 
+     * @return mixed
+     */
     public function getCountryFlagByColumn($key = 'tw', $Column = 'code')
     {
         try {
