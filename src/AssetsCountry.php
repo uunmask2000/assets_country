@@ -2,7 +2,7 @@
 /*
  * @Arthur: kk
  * @Date: 2022-01-10 17:57:59
- * @LastEditTime: 2022-01-11 10:01:41
+ * @LastEditTime: 2022-01-11 10:33:22
  * @LastEditors: your name
  * @Description: 自動生成 [嚴格紀律 Description]
  * @FilePath: \assets_country\src\AssetsCountry.php
@@ -11,14 +11,18 @@
 
 namespace uunmask2000_kk\AssetsCountry;
 
+use PragmaRX\Countries\Package\Countries;
+
 class AssetsCountry
 {
     /**
      * @var string
      */
     protected $img_path = 'https://raw.githubusercontent.com/uunmask2000/assets_country/main/src/img/';
+    private $Countries_class;
     public function __construct()
     {
+        $this->Countries_class = new Countries();
     }
     /**
      * 獲取根據國家(地區)縮碼國旗
@@ -77,6 +81,7 @@ class AssetsCountry
 
             foreach ($lists as $key => $value) {
                 $lists[$key]['flag'] = $this->img_path . strtoupper($value['code']) . '.png';
+                $lists[$key]['CountryInfo'] = $this->Countries_class->where('cca2', $value['code'])->toArray();
             }
 
             return $lists;
@@ -138,6 +143,7 @@ class AssetsCountry
 
             $output = $lists[$id];
             $output['flag'] =  $this->img_path . strtoupper($output['code']) . '.png';
+            $output['CountryInfo'] =  $this->Countries_class->where('cca2', $output['code'])->toArray();
 
             return $output;
             // //code...
