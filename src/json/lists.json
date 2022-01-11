@@ -435,6 +435,11 @@
         "code": "GT"
     },
     {
+        "name": "Guernsey",
+        "dial_code": "44",
+        "code": "GG"
+    },
+    {
         "name": "Guinea",
         "dial_code": "224",
         "code": "GN"
@@ -505,6 +510,11 @@
         "code": "IE"
     },
     {
+        "name": "Isle of Man",
+        "dial_code": "44",
+        "code": "IM"
+    },
+    {
         "name": "Israel",
         "dial_code": "972",
         "code": "IL"
@@ -523,6 +533,11 @@
         "name": "Japan",
         "dial_code": "81",
         "code": "JP"
+    },
+    {
+        "name": "Jersey",
+        "dial_code": "44",
+        "code": "JE"
     },
     {
         "name": "Jordan",
@@ -1128,6 +1143,11 @@
         "name": "United Arab Emirates",
         "dial_code": "971",
         "code": "AE"
+    },
+    {
+        "name": "United Kingdom",
+        "dial_code": "44",
+        "code": "GB"
     },
     {
         "name": "United Kingdom",
