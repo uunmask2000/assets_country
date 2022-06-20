@@ -17,7 +17,7 @@
         "php": ">=7.4",
         "ext-simplexml": "*",
         "ext-xml": "*",
-        "pragmarx/countries": "dev-master"
+        "pragmarx/countries": "0.8.2"
     },
     "require-dev": {
         "ext-dom": "*",
