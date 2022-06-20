@@ -1,13 +1,11 @@
 {
     "name": "uunmask2000_kk/assets_country",
-    "authors": [
-        {
-            "name": "uunmask2000_kk",
-            "email": "uunmask2000@gmail.com",
-            "homepage": "https://twitter.com/uunmask2000",
-            "role": "Developer"
-        }
-    ],
+    "authors": [{
+        "name": "uunmask2000_kk",
+        "email": "uunmask2000@gmail.com",
+        "homepage": "https://twitter.com/uunmask2000",
+        "role": "Developer"
+    }],
     "description": "根據一些國家(地區)資訊，返回對應的國家(地區)縮碼國旗 ",
     "type": "library",
     "license": "LGPL-3.0",
@@ -16,23 +14,19 @@
         "issues": "https://github.com/uunmask2000/assets_country/issues"
     },
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.4",
+        "ext-simplexml": "*",
         "ext-xml": "*",
-        "pragmarx/countries": "^0.7.2",
-        "ext-simplexml": "*"
+        "pragmarx/countries": "dev-master"
     },
     "require-dev": {
         "ext-dom": "*",
-        "ext-zip": "*",
-        "phpunit/phpunit": "^9 || ^8 || ^7"
+        "ext-zip": "*"
     },
     "suggest": {
         "ext-zip": "Needed to store or download multiple files at once."
     },
     "config": {
-        "platform": {
-            "php": "7.0.0"
-        },
         "optimize-autoloader": true,
         "sort-packages": true
     },
