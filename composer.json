@@ -1,11 +1,13 @@
 {
     "name": "uunmask2000_kk/assets_country",
-    "authors": [{
-        "name": "uunmask2000_kk",
-        "email": "uunmask2000@gmail.com",
-        "homepage": "https://twitter.com/uunmask2000",
-        "role": "Developer"
-    }],
+    "authors": [
+        {
+            "name": "uunmask2000_kk",
+            "email": "uunmask2000@gmail.com",
+            "homepage": "https://twitter.com/uunmask2000",
+            "role": "Developer"
+        }
+    ],
     "description": "根據一些國家(地區)資訊，返回對應的國家(地區)縮碼國旗* ",
     "type": "library",
     "license": "LGPL-3.0",
@@ -15,9 +17,8 @@
     },
     "require": {
         "php": ">=7.4",
-        "ext-simplexml": "*",
-        "ext-xml": "*",
-        "pragmarx/countries": "0.8.2"
+        "pragmarx/countries": "0.8.2",
+        "psr/simple-cache":"^1.0"
     },
     "require-dev": {
         "ext-dom": "*",
@@ -31,9 +32,9 @@
         "sort-packages": true
     },
     "autoload": {
-        "classmap": [
-            "src/"
-        ]
+        "psr-4": {
+            "AssetsCountryService\\": "src"
+        }
     },
     "extra": {
         "branch-alias": {}
