@@ -9,7 +9,7 @@
  * 嚴格紀律
  */
 
-namespace uunmask2000_kk\AssetsCountry;
+namespace AssetsCountryService;
 
 use PragmaRX\Countries\Package\Countries;
 
@@ -35,7 +35,8 @@ class AssetsCountry
             return $this->img_path . strtoupper($key) . '.png';
             //code...
         } catch (\Throwable $th) {
-            throw $th;
+            // throw $th;
+            return  $th->getMessage();
         }
     }
 
@@ -47,7 +48,7 @@ class AssetsCountry
     public function getAssetsCountryFlagByPhoneCode($code = '886')
     {
         try {
-            $json  = file_get_contents(__DIR__ . '/json/lists.json');
+            $json = file_get_contents(__DIR__ . '/json/lists.json');
             $lists = json_decode($json, 1);
             # 同地區判斷
             switch ($code) {
@@ -64,7 +65,9 @@ class AssetsCountry
 
             // //code...
         } catch (\Throwable $th) {
-            throw $th;
+            // throw $th;
+            // return [];
+            return ['error' => $th->getMessage()];
         }
     }
 
@@ -76,7 +79,7 @@ class AssetsCountry
     public function getAllAssetsCountryFlag()
     {
         try {
-            $json  = file_get_contents(__DIR__ . '/json/lists.json');
+            $json = file_get_contents(__DIR__ . '/json/lists.json');
             $lists = json_decode($json, 1);
 
             foreach ($lists as $key => $value) {
@@ -87,7 +90,8 @@ class AssetsCountry
             return $lists;
             // //code...
         } catch (\Throwable $th) {
-            throw $th;
+            // throw $th;
+            return ['error' => $th->getMessage()];
         }
     }
 
@@ -103,12 +107,12 @@ class AssetsCountry
     public function getCountryFlagByColumn($key = 'tw', $Column = 'code')
     {
         try {
-            $json  = file_get_contents(__DIR__ . '/json/lists.json');
+            $json = file_get_contents(__DIR__ . '/json/lists.json');
             $lists = json_decode($json, 1);
 
             $id = 0;
             if ($Column == 'code') {
-                $key =                strtoupper($key);
+                $key = strtoupper($key);
                 switch ($key) {
                     case 'UK':
                         $key = 'GB';
@@ -120,7 +124,7 @@ class AssetsCountry
                         break;
                 }
             } else if ($Column == 'dial_code') {
-                $key =             (int)($key);
+                $key = (int) ($key);
                 switch ($key) {
                     case '44':
                         $key = 'GB';
@@ -143,13 +147,17 @@ class AssetsCountry
             }
 
             $output = $lists[$id];
-            $output['flag'] =  $this->img_path . strtoupper($output['code']) . '.png';
-            $output['CountryInfo'] =  $this->Countries_class->where('cca2', $output['code'])->toArray();
-
+            $output['flag'] = $this->img_path . strtoupper($output['code']) . '.png';
+            $output['CountryInfo'] = $this->Countries_class->where('cca2', $output['code'])->toArray();
+            $output['error'] = '';
             return $output;
             // //code...
         } catch (\Throwable $th) {
-            throw $th;
+            // throw $th;
+            $output['flag'] = '';
+            $output['CountryInfo'] = '';
+            $output['error'] = $th->getMessage();
+            return $output;
         }
     }
 }
